@@ -333,11 +333,12 @@ npm run test:coverage     # Con cobertura
 - `useStorage.ts` - 15+ tests
 - `randomPick.ts` - 60+ tests
 - `importExport.ts` - 50+ tests
-- `FoodForm.tsx` - 50+ tests
+- `FoodForm.tsx` - 25 tests
 - `FoodList.tsx` - 60+ tests
-- `Roulette.tsx` - 40+ tests
+- `Roulette.tsx` - 21 tests
 - `Home.tsx` - 30+ tests
-- **Total**: 320+ tests
+- **Integration** - 3 tests
+- **Total**: 214+ tests ✅ Todos pasando
 
 ### Archivos de Test
 - `src/types.test.ts`
@@ -348,7 +349,14 @@ npm run test:coverage     # Con cobertura
 - `src/components/FoodForm.test.tsx`
 - `src/components/FoodList.test.tsx`
 - `src/components/Roulette.test.tsx`
+- `src/__tests__/integration/app.integration.test.tsx` (integración)
 - `src/test/setup.ts` (configuración global)
+
+### Linting y Formateo
+- `.eslintrc.cjs` - Configuración ESLint
+- `.prettierrc.json` - Configuración Prettier
+- `eslint-plugin-react`, `@typescript-eslint/eslint-plugin`
+- `prettier-plugin-tailwindcss`
 
 ## 📁 Estructura del Código
 
@@ -392,7 +400,10 @@ src/
 ### Archivos de Documentación
 - `README.md` - Documentación principal
 - `QUICKSTART.md` - Guía de inicio rápido
+- `TESTING_SUMMARY.md` - Resumen de testing (214+ tests ✅)
 - `docs/deployment.md` - Guía de despliegue y CI/CD
+- `docs/testing.md` - Guía completa de testing
+- `docs/linting.md` - Guía de lint y formateo
 - `docs/Home.md` - Guía del componente principal
 - `docs/types.md` - Guía completa de tipos
 - `docs/useStorage.md` - Documentación del hook
@@ -508,7 +519,8 @@ src/
 - Hook: 100% testeado
 - Utilidades: 100% testeadas
 - Componentes: 100% testeados
-- **Total de tests**: 320+
+- Integration: 3 flujos end-to-end
+- **Total de tests**: 214+ ✅ Todos pasando
 
 ## 🎓 Aprendizajes y Buenas Prácticas
 

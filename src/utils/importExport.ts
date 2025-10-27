@@ -160,6 +160,7 @@ export function mergeFoods(existing: Food[], imported: Food[]): Food[] {
  * Reemplaza todos los alimentos con los importados
  */
 export function replaceFoods(imported: Food[]): Food[] {
-  return [...imported]
+  // Crear copia profunda para evitar mutaciones
+  return imported.map(food => ({ ...food }))
 }
 

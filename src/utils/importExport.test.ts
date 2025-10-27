@@ -142,10 +142,16 @@ describe('importExport utilities', () => {
     let createElementSpy: any
     let appendChildSpy: any
     let removeChildSpy: any
-    let createObjectURLSpy: any
-    let revokeObjectURLSpy: any
 
     beforeEach(() => {
+      // Mock URL APIs si no existen
+      if (!global.URL.createObjectURL) {
+        global.URL.createObjectURL = vi.fn(() => 'blob:mock-url')
+      }
+      if (!global.URL.revokeObjectURL) {
+        global.URL.revokeObjectURL = vi.fn()
+      }
+
       // Mock DOM APIs
       const mockLink = {
         href: '',
@@ -156,16 +162,12 @@ describe('importExport utilities', () => {
       createElementSpy = vi.spyOn(document, 'createElement').mockReturnValue(mockLink as any)
       appendChildSpy = vi.spyOn(document.body, 'appendChild').mockImplementation(() => mockLink as any)
       removeChildSpy = vi.spyOn(document.body, 'removeChild').mockImplementation(() => mockLink as any)
-      createObjectURLSpy = vi.spyOn(URL, 'createObjectURL').mockReturnValue('blob:mock-url')
-      revokeObjectURLSpy = vi.spyOn(URL, 'revokeObjectURL').mockImplementation(() => {})
     })
 
     afterEach(() => {
       createElementSpy.mockRestore()
       appendChildSpy.mockRestore()
       removeChildSpy.mockRestore()
-      createObjectURLSpy.mockRestore()
-      revokeObjectURLSpy.mockRestore()
     })
 
     it('debe exportar alimentos a JSON', () => {

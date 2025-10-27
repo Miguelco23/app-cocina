@@ -9,8 +9,11 @@ Aplicación web moderna construida con React, TypeScript, Vite y Tailwind CSS. L
 - **Vite** - Build tool y dev server ultrarrápido
 - **Tailwind CSS** - Framework de CSS utility-first
 - **Framer Motion** - Biblioteca de animaciones
-- **Vitest** - Framework de testing ultrarrápido
+- **Vitest** - Framework de testing (214+ tests ✅)
 - **Testing Library** - Herramientas para testing de componentes React
+- **ESLint** - Linter para calidad de código
+- **Prettier** - Formateador de código
+- **GitHub Actions** - CI/CD automático
 - **GitHub Pages** - Hosting estático
 
 ## 📦 Instalación
@@ -44,7 +47,7 @@ Previsualiza el build de producción localmente
 ```bash
 npm run test
 ```
-Ejecuta los tests unitarios en modo watch
+Ejecuta los tests unitarios en modo watch (214+ tests)
 
 ```bash
 npm run test:ui
@@ -52,9 +55,35 @@ npm run test:ui
 Abre la interfaz visual de Vitest para ver los tests
 
 ```bash
+npm run test:integration
+```
+Ejecuta tests de integración de flujos completos
+
+```bash
 npm run test:coverage
 ```
 Genera reporte de cobertura de código
+
+### Lint y Format
+```bash
+npm run lint
+```
+Verifica problemas de código con ESLint
+
+```bash
+npm run lint:fix
+```
+Corrige problemas de ESLint automáticamente
+
+```bash
+npm run format
+```
+Formatea código con Prettier
+
+```bash
+npm run validate
+```
+Ejecuta type-check + lint + tests (validación completa)
 
 ### Deploy a GitHub Pages
 ```bash
